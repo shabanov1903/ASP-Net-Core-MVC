@@ -1,0 +1,67 @@
+﻿{
+  "Employees": [
+    {
+      "Id": 1,
+      "FirstName": "Шабанов",
+      "SecondName": "Данил",
+      "Position": "Программист C#",
+      "OfficeId": 1
+    },
+    {
+      "Id": 2,
+      "FirstName": "Иванов",
+      "SecondName": "Иван",
+      "Position": "Тестировщик",
+      "OfficeId": 3
+    },
+    {
+      "Id": 3,
+      "FirstName": "Петров",
+      "SecondName": "Петр",
+      "Position": "Тестировщик",
+      "OfficeId": 1
+    },
+    {
+      "Id": 4,
+      "FirstName": "Сидоров",
+      "SecondName": "Сидор",
+      "Position": "Программист JS",
+      "OfficeId": 2
+    },
+    {
+      "Id": 5,
+      "FirstName": "Воронин",
+      "SecondName": "Константин",
+      "Position": "Директор",
+      "OfficeId": 2
+    },
+    {
+      "Id": 6,
+      "FirstName": "Лионель",
+      "SecondName": "Месси",
+      "Position": "Верстальщик HTML",
+      "OfficeId": 1
+    },
+    {
+      "Id": 7,
+      "FirstName": "Владимир",
+      "SecondName": "Путин",
+      "Position": "Прогаммист SQL",
+      "OfficeId": 3
+    },
+    {
+      "Id": 8,
+      "FirstName": "Федоров",
+      "SecondName": "Денис",
+      "Position": "Программист JS",
+      "OfficeId": 1
+    },
+    {
+      "Id": 9,
+      "FirstName": "Абросимов",
+      "SecondName": "Алексей",
+      "Position": "Специалист технической поддержки",
+      "OfficeId": 2
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+﻿@model Lesson8.Models.OfficeModel
+@{
+    ViewData["Title"] = "Office Page";
+}
+
+<div class="text-center">
+    <h6 class="display-2">@Model.Name офис</h6>
+    <h6 class="display-6">Расположение офиса: @Model.Address</h6>
+    <h6 class="display-6">Идентификатор офиса: @Model.Id</h6>
+</div>
+<table class="table my-4">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Должность</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.Employees)
+        {
+            <tr>
+                <th>@item.Id</th>
+                <th>@item.FirstName</th>
+                <th>@item.SecondName</th>
+                <th>@item.Position</th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Кнопка выпадающего списка
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        @for(var i = 1; i <= Model.Count; i++)
+        {
+            <li><a class="dropdown-item" asp-action="Index" asp-route-id="@i">Офис @i</a></li>
+        }
+  </ul>
+</div>
