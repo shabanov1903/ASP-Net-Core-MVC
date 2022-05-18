@@ -1,0 +1,21 @@
+﻿@model MailManager.WebApi.Models.NoticeDto
+
+<div class="text-center">
+    <h1 style="font-size: 15px">Зарегистрируйте новое сообщение в системе рассылки</h1>
+</div>
+
+<form asp-action="AddNotice" class="text-center">
+    <label style="margin: 10px">Тема сообщения:</label>
+    <br/>
+    <input asp-for="Subject" style="width: 50vw"/>
+    <br/>
+    <span asp-validation-for="Subject" class="text-danger"></span>
+    <br/>
+    <label style="margin: 10px">Тело письма:</label>
+    <br/>
+    <textarea asp-for="Text"style="width: 50vw; height: 20vh"></textarea>
+    <br/>
+    <span asp-validation-for="Text" class="text-danger"></span>
+    <br/>
+    <input style="margin: 10px" type="submit" value="Сохранить"/>
+</form>
