@@ -14,7 +14,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0-preview.4.22229.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
     <PackageReference Include="Quartz" Version="3.4.0" />
     <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.4.0" />
     <PackageReference Include="Quartz.Extensions.Hosting" Version="3.4.0" />
@@ -27,6 +27,7 @@
     <ProjectReference Include="..\MailManager.Core.Intarfaces\MailManager.Core.Intarfaces.csproj" />
     <ProjectReference Include="..\MailManager.Core.Services\MailManager.Core.Services.csproj" />
     <ProjectReference Include="..\MailManager.Data\MailManager.Data.csproj" />
+    <ProjectReference Include="..\MailManager.WebApi.Identity\MailManager.WebApi.Identity.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

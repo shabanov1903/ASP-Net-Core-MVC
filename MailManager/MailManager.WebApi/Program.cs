@@ -9,6 +9,10 @@ using MailManager.Core.Email;
 using Quartz;
 using Quartz.Impl;
 using MailManager.WebApi.Services;
+using MailManager.WebApi.Identity;
+using MailManager.WebApi.Identity.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,9 @@ builder.Services.AddControllersWithViews();
 // Add database
 builder.Services.AddDbContext<MailContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer")));
+// Add Identity server
+builder.Services.AddDbContext<IdentityContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerIdentity")));
 // Add services
 builder.Services.AddScoped<IRepository<Client>, SQLServerDataBaseClients>();
 builder.Services.AddScoped<IRepository<Notice>, SQLServerDataBaseNotices>();
@@ -46,30 +53,46 @@ var options = new MailGatewayOptions
 {
     SenderName = "Server",
     SMTPServer = "smtp.yandex.ru",
-    Sender = "*********@yandex.ru",
-    Password = "*********"
+    Sender = "shabanov-1995@yandex.ru",
+    Password = "Neverwinter1!"
 };
 builder.Services.AddScoped<ISender, MessageGateway>(p => {
     return new MessageGateway(options);
 });
 // Add Mapper
 builder.Services.AddMapper();
+//Add Identity
+builder.Services.AddIdentity<User, Role>()
+    .AddEntityFrameworkStores<IdentityContext>()
+    .AddDefaultTokenProviders();
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.Name = "MailManager";
+    options.Cookie.HttpOnly = true;
+
+    options.LoginPath = "/Accoutn/Login";
+    options.LogoutPath = "/Accoutn/Logout";
+    options.AccessDeniedPath = "/Accoutn/AccessDenied";
+
+    options.SlidingExpiration = true;
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Mail/Error");
 }
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Mail}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

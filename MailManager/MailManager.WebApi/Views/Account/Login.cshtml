@@ -1,0 +1,50 @@
+﻿@model MailManager.WebApi.Models.Identity.LoginDto
+@{
+    ViewBag.Title = "Вход в систему";
+    Layout = "_LayoutSimple";
+}
+
+<div class="form-signin">
+    <form asp-action="Login" asp-route-ReturnUrl="@Model?.ReturnUrl">
+
+        <h1 class="h3 mb-3 fw-normal">Вход в систему</h1>
+        
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-floating">
+            <input asp-for="UserName" class="form-control" placeholder="Login">
+            <label asp-for="UserName"></label>
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+        
+        <div class="form-floating">
+            <input asp-for="Password" class="form-control" placeholder="Password">
+            <label asp-for="Password"></label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input asp-for="RememberMe"> Remember me
+            </label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+    </form>
+</div>
+
+<div class="text-center">
+    <input type="button"
+           value="Регистрация"
+           onclick="location.href='@Url.Action("Register", "Account")'"/>
+</div>
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/signin.css"/>
+}
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

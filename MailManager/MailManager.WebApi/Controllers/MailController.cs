@@ -8,9 +8,11 @@ using System.Diagnostics;
 using Quartz;
 using Nelibur.ObjectMapper;
 using MailManager.WebApi.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MailManager.WebApi.Controllers
 {
+    [Authorize]
     public class MailController : Controller
     {
         private readonly ILogger<MailController> _logger;

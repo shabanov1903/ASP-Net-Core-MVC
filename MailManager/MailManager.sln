@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailManager.Core.Models", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailManager.Core.Services", "MailManager.Core.Services\MailManager.Core.Services.csproj", "{CA6F8FA2-8855-4764-83B2-3C184DCC7C7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailManager.WebApi.Identity", "MailManager.WebApi.Identity\MailManager.WebApi.Identity.csproj", "{1FEC19D6-EAF0-4ACE-91C2-50F60760FBD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{CA6F8FA2-8855-4764-83B2-3C184DCC7C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA6F8FA2-8855-4764-83B2-3C184DCC7C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA6F8FA2-8855-4764-83B2-3C184DCC7C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FEC19D6-EAF0-4ACE-91C2-50F60760FBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FEC19D6-EAF0-4ACE-91C2-50F60760FBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FEC19D6-EAF0-4ACE-91C2-50F60760FBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FEC19D6-EAF0-4ACE-91C2-50F60760FBD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
