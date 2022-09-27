@@ -1,0 +1,21 @@
+﻿@model MailManager.WebApi.Models.ClientDto
+
+<div class="text-center">
+    <h1 style="font-size: 15px">Добавьте нового клиента для получения сообщений</h1>
+</div>
+
+<form asp-action="AddClient" class="text-center">
+    <label style="margin: 10px">Имя нового клиента:</label>
+    <br/>
+    <input asp-for="Name"/>
+    <br/>
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br/>
+    <label style="margin: 10px">Почта:</label>
+    <br/>
+    <input asp-for="Mail"/>
+    <br/>
+    <span asp-validation-for="Mail" class="text-danger"></span>
+    <br/>
+    <input style="margin: 10px" type="submit" value="Сохранить"/>
+</form>
